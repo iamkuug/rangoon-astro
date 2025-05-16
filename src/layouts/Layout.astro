@@ -1,22 +1,83 @@
+---
+import "@fontsource-variable/dosis";
+import { Navbar } from "../components/navbar";
+import { Footer } from "../components/footer";
+import Lightbox from "@julian_cataldo/astro-lightbox/Lightbox.astro";
+
+interface Props {
+	title?: string;
+}
+
+const { title = "Rangoon REIT" } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <Lightbox />
+    </head>
+    <body class="font-display ">
+        <Navbar client:only />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Enhanced Lightbox styles */
+    :global(.app-lightbox) {
+        background-color: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    :global(.portal) {
+        padding: 2rem !important;
+    }
+
+    :global(.portal img) {
+        width: auto !important;
+        height: auto !important;
+        max-width: 90% !important;
+        max-height: 90vh !important;
+        border: none !important;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.3) !important;
+        border-radius: 4px !important;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    :global([data-lightbox]) {
+        cursor: zoom-in !important;
+        transition: transform 0.2s ease !important;
+    }
+
+    :global([data-lightbox]:hover) {
+        /* transform: scale(1.02) !important; */
+    }
 </style>
