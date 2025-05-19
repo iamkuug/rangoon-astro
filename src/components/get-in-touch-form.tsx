@@ -1,8 +1,9 @@
 import React, { type ChangeEvent, type FormEvent } from "react";
 import { useState } from "react";
-import { Phone } from "lucide-react";
+import { LoaderCircle, Phone } from "lucide-react";
 
-import getInTouchBg from "../assets/get-in-touch-bg.png";   
+import getInTouchBg from "../assets/get-in-touch-bg.png";
+import { toast } from "sonner";
 
 export const GetInTouchForm = () => {
 	const [formData, setFormData] = useState({
@@ -14,10 +15,49 @@ export const GetInTouchForm = () => {
 		message: "",
 	});
 
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+	const [status, setStatus] = useState<{
+		type: "success" | "error" | "loading" | null;
+		message: string;
+	}>({
+		type: null,
+		message: "",
+	});
+
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		// Handle form submission logic here
-		console.log(formData);
+		setStatus({ type: "loading", message: "Sending..." });
+
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			});
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(data.message || "Something went wrong");
+			}
+
+			setStatus({
+				type: "success",
+				message: "Thank you for your message. We will get back to you soon!",
+			});
+
+			toast.success(
+				"Thank you for your message. We will get back to you soon!",
+			);
+		} catch (error) {
+			toast.error("Something went wrong. Please try again later.");
+			setStatus({
+				type: "error",
+				message:
+					error instanceof Error ? error.message : "Something went wrong",
+			});
+		}
 	};
 
 	const handleChange = (
@@ -151,9 +191,13 @@ export const GetInTouchForm = () => {
 
 						<div className="pt-4">
 							<button
+								disabled={status.type === "loading"}
 								type="submit"
-								className="bg-brand-primary text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all"
+								className="cursor-pointer flex items-center bg-brand-primary text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all hover:ring-2 hover:ring-brand-primary hover:ring-offset-2"
 							>
+								{status.type === "loading" && (
+									<LoaderCircle className="animate-spin mr-2" />
+								)}
 								Send Message
 							</button>
 						</div>

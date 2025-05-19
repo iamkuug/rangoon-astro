@@ -2,6 +2,7 @@
 import "@fontsource-variable/dosis";
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
+import { Toaster } from "sonner";
 import Lightbox from "@julian_cataldo/astro-lightbox/Lightbox.astro";
 
 import "../styles/global.css";
@@ -29,6 +30,7 @@ const { title = "Rangoon REIT" } = Astro.props;
             <slot />
         </main>
         <Footer />
+        <Toaster position="bottom-right" client:load/>
     </body>
 </html>
 

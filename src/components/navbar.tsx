@@ -55,7 +55,7 @@ export const Navbar: FC<NavbarProps> = ({ className = "" }) => {
 										<NavigationMenuItem className="relative">
 											<NavigationMenuTrigger
 												className={`bg-transparent active:bg-transparent ml-4 py-1.5 cursor-pointer ${
-													isActive(path) ? "bg-brand-accent rounded-full" : ""
+													isActive(path) || isActive("/about-us/directors") ? "bg-brand-accent rounded-full" : ""
 												}`}
 											>
 												{" "}
@@ -63,9 +63,9 @@ export const Navbar: FC<NavbarProps> = ({ className = "" }) => {
 											</NavigationMenuTrigger>
 											<NavigationMenuContent>
 												<NavigationMenuLink href="/about-us" className="w-32">
-													More
+													More Info
 												</NavigationMenuLink>
-												<NavigationMenuLink href="/directors">
+												<NavigationMenuLink href="/about-us/directors">
 													Directors
 												</NavigationMenuLink>
 											</NavigationMenuContent>
