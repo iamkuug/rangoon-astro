@@ -14,7 +14,7 @@ export const Footer = () => {
 						REIT Manager
 					</h3>
 					<div className="py-2">
-						<p>REIT IC Asset Managers (Ghana) Limited</p>
+						<p>IC Asset Managers (Ghana) Limited</p>
 						<p>No. 2 Johnson Sirleaf Road</p>
 						<p>North Ridge – Accra, Ghana</p>
 					</div>

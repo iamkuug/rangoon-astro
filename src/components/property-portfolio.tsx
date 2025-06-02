@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { ImageGrid } from "../components/image-grid";
 
+type GalleryFilter = "all" | "commercial" | "retail" | "residential";
+
 export const PropertyPortfolio = () => {
+	const [galleryFilter, setGalleryFilter] = useState<GalleryFilter>("all");
+
 	const imagesHuawei = [
 		{
 			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/Huawei-Exterior-scaled-1-2048x1150.jpg",
@@ -25,60 +30,6 @@ export const PropertyPortfolio = () => {
 		{
 			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-1-scaled-1-2048x1366.jpg",
 			cols: 2,
-			rows: 1,
-		},
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-53-scaled-1-2048x1366.jpg",
-			cols: 1,
-			rows: 1,
-		},
-
-		//dups
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-20-scaled-1-2048x1366.jpg",
-			cols: 1,
-			rows: 1,
-		},
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-1-scaled-1-2048x1366.jpg",
-			cols: 2,
-			rows: 1,
-		},
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-53-scaled-1-2048x1366.jpg",
-			cols: 1,
-			rows: 1,
-		},
-
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-20-scaled-1-2048x1366.jpg",
-			cols: 1,
-			rows: 1,
-		},
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-1-scaled-1-2048x1366.jpg",
-			cols: 2,
-			rows: 1,
-		},
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-53-scaled-1-2048x1366.jpg",
-			cols: 1,
-			rows: 1,
-		},
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-20-scaled-1-2048x1366.jpg",
-			cols: 1,
-			rows: 1,
-		},
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-1-scaled-1-2048x1366.jpg",
-			cols: 2,
-			rows: 1,
-		},
-
-		{
-			src: "https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-53-scaled-1-2048x1366.jpg",
-			cols: 1,
 			rows: 1,
 		},
 		{
@@ -179,40 +130,44 @@ export const PropertyPortfolio = () => {
 			</section>
 			<section className="flex items-center justify-center px-5">
 				<nav className="w-4/5 mx-auto">
-					<ul className="flex items-center  gap-x-10 py-5">
-						<li>
-							<a
-								href="/property-portfolio/all"
-								className="text-brand-primary font-semibold text-lg"
-							>
+					<ul className="flex items-center  gap-x-5 py-5">
+						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+						<li
+							onClick={() => setGalleryFilter("all")}
+							className={`hover:bg-brand-primary/10 px-5 py-1 rounded-full cursor-pointer ${galleryFilter === "all" ? "bg-brand-primary/10" : ""} active:scale-105 transition-all ease-in-out`}
+						>
+							<span className="text-brand-primary font-semibold text-lg">
 								All
-							</a>
+							</span>
 						</li>
-						<li>
-							<a
-								href="/property-portfolio/commercial"
-								className="text-brand-primary font-semibold text-lg"
-							>
+						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+						<li
+							onClick={() => setGalleryFilter("commercial")}
+							className={`hover:bg-brand-primary/10 px-5 py-1 rounded-full cursor-pointer ${galleryFilter === "commercial" ? "bg-brand-primary/10" : ""} active:scale-105 transition-all ease-in-out`}
+						>
+							<span className="text-brand-primary font-semibold text-lg">
 								Commercial
-							</a>
+							</span>
 						</li>
-						<li>
-							<a
-								href="/property-portfolio/retail"
-								className="text-brand-primary font-semibold text-lg"
-							>
+						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+						<li
+							onClick={() => setGalleryFilter("retail")}
+							className={`hover:bg-brand-primary/10 px-5 py-1 rounded-full cursor-pointer ${galleryFilter === "retail" ? "bg-brand-primary/10" : ""} active:scale-105 transition-all ease-in-out`}
+						>
+							<span className="text-brand-primary font-semibold text-lg">
 								Retail
-							</a>
+							</span>
 						</li>
 
-						<li>
-							<a
-								href="/property-portfolio/residential"
-								className="text-brand-primary font-semibold text-lg"
-							>
+						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+						{/* <li
+							onClick={() => setGalleryFilter("residential")}
+							className={`hover:bg-brand-primary/10 px-5 py-1 rounded-full cursor-pointer ${galleryFilter === "residential" ? "bg-brand-primary/10" : ""} active:scale-105 transition-all ease-in-out`}
+						>
+							<span className="text-brand-primary font-semibold text-lg">
 								Residential
-							</a>
-						</li>
+							</span>
+						</li> */}
 					</ul>
 				</nav>
 			</section>

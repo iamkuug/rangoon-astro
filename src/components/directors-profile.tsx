@@ -11,16 +11,16 @@ import bg from "../assets/get-in-touch-bg.png";
 export const DirectorsProfile = () => {
 	const directors = [
 		{
-			image: cynthia.src,
-			name: "Cynthia Aduonum-Darko Acquaye",
-			role: "Real Estate & Energy Consultant",
-			bio: "Cynthia is a seasoned leader in both real estate and energy sectors, boasting over 25 years of experience within the O&M Group of associated companies. Currently, she serves as the Group CEO of this group and holds a Board Directorship in its subsidiary properties; Tema Tank Farm, Oasis Energy, and Moiba Ghana. She gained recognition with the 2019 Africa International Award of Merit for her commitment to business integrity. In her role as Group CEO, Cynthia's focus is on steering strategic direction and pursuing growth opportunities across the group's various entities.",
-		},
-		{
 			image: shadrack.src,
 			name: "Shadrack Arhin",
 			role: "Lawyer",
 			bio: "With 22 years of rich legal experience, Shadrack founded Corporate Legal Concepts in the year 2007, where he is currently the Head of Chambers and leads a team of legal practitioners to render legal services to both local and international clients in various sectors of the economy including but not limited to advising on FIDIC Contracts, Drafting various Oil and Gas Agreements (Upstream and Downstream), and various Property, Land, and Conveyancing (Real Property) Law advice and Drafting. Shadrack obtained an LLB degree from the Faculty of Law of the University of Ghana, Legon in 1984.",
+		},
+		{
+			image: cynthia.src,
+			name: "Cynthia Aduonum-Darko Acquaye",
+			role: "Real Estate & Energy Consultant",
+			bio: "Cynthia is a seasoned leader in both real estate and energy sectors, boasting over 25 years of experience within the O&M Group of associated companies. Currently, she serves as the Group CEO of this group and holds a Board Directorship in its subsidiary properties; Tema Tank Farm, Oasis Energy, and Moiba Ghana. She gained recognition with the 2019 Africa International Award of Merit for her commitment to business integrity. In her role as Group CEO, Cynthia's focus is on steering strategic direction and pursuing growth opportunities across the group's various entities.",
 		},
 		{
 			image: akua.src,
