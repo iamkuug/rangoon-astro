@@ -48,7 +48,7 @@ export const Navbar: FC<NavbarProps> = ({ className = "" }) => {
 					<img
 						src={icLogo.src}
 						alt="ic-logo"
-						className="w-14 h-14 md:w-20 md:h-20 object-contain"
+						className="w-18 h-14 md:w-20 md:h-20 object-contain"
 					/>
 				</a>
 

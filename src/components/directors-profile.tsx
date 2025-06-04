@@ -43,28 +43,24 @@ export const DirectorsProfile = () => {
 	];
 
 	return (
-		<div className="get-in-touch-page h-auto" style={{
-            backgroundImage: `url(${bg.src})`,
-        }}>
-			<section className="flex items-center justify-center pt-10 px-5">
-				<div className="w-4/5 mx-auto flex flex-col items-start gap-4">
-					<h1 className="text-4xl text font-semibold text-brand-primary">
-						Directors
-					</h1>
-				</div>
+		<div className="min-h-screen bg-white md:get-in-touch-page" style={{
+			backgroundImage: `url(${bg.src})`,
+		}}>
+			<section className="w-[90%] md:w-4/5 mx-auto pt-8 md:pt-10">
+				<h1 className="text-3xl md:text-4xl font-semibold text-brand-primary mb-8">
+					Directors
+				</h1>
 			</section>
-			<section className="relative flex items-center justify-center py-10 px-5">
-				<div className="w-4/5 mx-auto flex flex-col items-start gap-6 ">
-					{directors.map((director, index) => (
-						<DirectorProfileCard
-							key={director.name}
-							image={director.image}
-							name={director.name}
-							role={director.role}
-							bio={director.bio}
-						/>
-					))}
-				</div>
+			<section className="w-[90%] md:w-4/5 mx-auto pb-8 md:pb-10">
+				{directors.map((director) => (
+					<DirectorProfileCard
+						key={director.name}
+						image={director.image}
+						name={director.name}
+						role={director.role}
+						bio={director.bio}
+					/>
+				))}
 			</section>
 		</div>
 	);

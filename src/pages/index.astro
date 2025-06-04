@@ -19,14 +19,14 @@ import { Image } from "astro:assets";
 
 <Layout title='Home | Rangoon REIT'>
       <HomeHero client:load/>
-      <section class="bg-brand-primary flex items-center justify-center md:py-10 px-5 ">
-        <div class="flex md:flex-row flex-col  items-center justify-center w-4/5 mx-auto  gap-x-20 h-[250px] ">
-          <div class="md:w-[400px] w-[250px]">
+      <section class="bg-brand-primary flex items-center justify-center py-8 md:py-10 px-4 md:px-5">
+        <div class="flex flex-col md:flex-row items-center justify-center w-full md:w-4/5 mx-auto gap-y-6 md:gap-x-20 min-h-[250px]">
+          <div class="w-[200px] md:w-[400px]">
             <img src={rangoonLogoWhite.src} alt="Rangoon-Logo" class="w-full" />
           </div>
-          <div class="flex flex-col items-start md:w-1/2 gap-y-4 ">
-            <div class="h-1.5 w-1/3 bg-brand-secondary" />
-            <p class="text-white text-sm w-5/6 max-h-[100px]">
+          <div class="flex flex-col items-start w-full md:w-1/2 gap-y-4 text-center md:text-left">
+            <div class="h-1.5 w-1/3 bg-brand-secondary mx-auto md:mx-0" />
+            <p class="text-white text-sm w-full md:w-5/6">
               Rangoon Real Estate Invest Trust (REIT) is a real estate
               investment trust established to invest directly and indirectly in
               a portfolio of income-generating real estate assets primarily used
@@ -36,37 +36,37 @@ import { Image } from "astro:assets";
             </p>
             <a
               href="/about-us"
-              class="font-semibold bg-brand-secondary text-brand-primary rounded-full  px-4 py-1  hover:ring-1 hover:ring-white hover:ring-offset-1 active:bg-brand-secondary/80"
+              class="font-semibold bg-brand-secondary text-brand-primary rounded-full px-4 py-1 mx-auto md:mx-0 hover:ring-1 hover:ring-white hover:ring-offset-1 active:bg-brand-secondary/80"
             >
               <span>Learn More</span>
             </a>
           </div>
         </div>
       </section>
-      <section class="relative py-24 px-5 flex flex-col items-center justify-center gap-y-8">
+      <section class="relative py-12 md:py-24 px-4 md:px-5 flex flex-col items-center justify-center gap-y-8 bg-white overflow-hidden">
         <img
-          class="absolute -z-10"
+          class="absolute inset-0 w-full h-full object-cover opacity-10 md:opacity-30"
           src={canonTowerGray.src}
           alt="canon-tower-gray"
         />
-        <div class="w-4/5">
-          <div class="flex w-full gap-40">
-            <div class="w-1/3">
-              <h1 class="font-semibold text-5xl leading-[3rem] text-brand-primary ">
+        <div class="w-full md:w-4/5 relative">
+          <div class="flex flex-col md:flex-row w-full md:gap-40 gap-y-6">
+            <div class="w-full md:w-1/3 text-center md:text-left">
+              <h1 class="font-semibold text-4xl md:text-5xl leading-[3rem] text-brand-primary">
                 Property Portfolio
               </h1>
             </div>
 
-            <div class="flex flex-col items-start w-full px-10 gap-y-5">
-              <div class="flex items-center gap-3 w-full">
-                <div class="bg-gray-50 w-full h-64 cursor-pointer" data-lightbox="true">
+            <div class="flex flex-col items-start w-full md:px-10 gap-y-5">
+              <div class="flex flex-col md:flex-row items-center gap-3 w-full">
+                <div class="bg-gray-50 w-full h-48 md:h-64 cursor-pointer" data-lightbox="true">
                   <Image
                     src={huawei1}
                     alt="huawei-1"
                     class="h-full w-full object-cover border-2 border-gray-50"
                   />
                 </div>
-                <div class="bg-gray-50 w-4/5 h-64 cursor-pointer" data-lightbox="true">
+                <div class="bg-gray-50 w-full md:w-4/5 h-48 md:h-64 cursor-pointer" data-lightbox="true">
                   <Image
                     src={huawei2}
                     alt="huawei-2"
@@ -74,17 +74,17 @@ import { Image } from "astro:assets";
                   />
                 </div>
               </div>
-              <span class="text-brand-primary font-semibold text-lg">
+              <span class="text-brand-primary font-semibold text-lg mx-auto md:mx-0">
                 Huawei Building
               </span>
             </div>
           </div>
         </div>
 
-        <div class="w-4/5">
-          <div class="flex w-full gap-40">
-            <div class="flex flex-col gap-y-3 w-1/3">
-              <h1 class="font-semibold text-7xl leading-[2.5rem] text-gray-400 ">
+        <div class="w-full md:w-4/5">
+          <div class="flex flex-col md:flex-row w-full md:gap-40 gap-y-6">
+            <div class="flex flex-col gap-y-3 w-full md:w-1/3 text-center md:text-left">
+              <h1 class="font-semibold text-6xl md:text-7xl leading-[2.5rem] text-gray-400">
                 100%
               </h1>
               <span class="text-gray-400 text-xl w-full">
@@ -92,16 +92,16 @@ import { Image } from "astro:assets";
               </span>
             </div>
 
-            <div class="flex flex-col items-start w-full gap-y-5 px-10">
-              <div class="flex items-center gap-3 w-full">
-                <div class="bg-gray-50 w-4/5 h-64 cursor-pointer " data-lightbox="true">
+            <div class="flex flex-col items-start w-full gap-y-5 md:px-10">
+              <div class="flex flex-col md:flex-row items-center gap-3 w-full relative z-10">
+                <div class="bg-gray-50 w-full md:w-4/5 h-48 md:h-64 cursor-pointer" data-lightbox="true">
                   <Image
                     src={infinity1}
                     alt="infinity-tower-1"
-                    class="h-full w-full object-coveri border-2 border-gray-50"
+                    class="h-full w-full object-cover border-2 border-gray-50"
                   />
                 </div>
-                <div class="bg-gray-50 w-full h-64 cursor-pointer" data-lightbox="true">
+                <div class="bg-gray-50 w-full h-48 md:h-64 cursor-pointer" data-lightbox="true">
                   <Image
                     src={infinity2}
                     alt="infinity-tower-2"
@@ -109,44 +109,42 @@ import { Image } from "astro:assets";
                   />
                 </div>
               </div>
-              <span class="text-brand-primary font-semibold text-lg">
+              <span class="text-brand-primary font-semibold text-lg mx-auto md:mx-0 relative z-10">
                 Infinity Tower
               </span>
             </div>
           </div>
         </div>
       </section>
-      <section class="bg-brand-primary text-white py-10 px-5 flex items-center justify-center h-[250px]">
-        <Container className="flex items-center justify-between">
-          <h2 class="text-4xl font-semibold">Our Partners</h2>
-          <Separator
-            color="white"
-            thickness="1px"
-            width="50px"
-            margin="0 2rem"
-            vertical={true}
-          />
-          <div class="flex gap-x-16 items-center">
-            <div class="w-52 flex items-center justify-center">
-              <img
-                src={goldkeyLogo.src}
-                alt="goldkey-logo"
-                class="w-full h-full object-contain"
-              />
-            </div>
-            <div class="w-28 flex items-center justify-center">
-              <img
-                src={icLogoWhite.src}
-                alt="ic-logo"
-                class="w-full h-full object-contain"
-              />
-            </div>
-            <div class="w-36 flex items-center justify-center">
-              <img
-                src={standardCharteredLogo.src}
-                alt="standard-chartered-logo"
-                class="w-full h-full object-contain"
-              />
+      <section class="bg-brand-primary text-white py-12 md:py-16 px-4 md:px-5">
+        <Container className="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center md:text-left">
+              Our Partners
+            </h2>
+            
+            <div class="grid grid-cols-3 md:col-span-2 gap-6 md:gap-12 items-center justify-items-center">
+              <div class="w-full max-w-[160px] flex items-center justify-center">
+                <img
+                  src={goldkeyLogo.src}
+                  alt="goldkey-logo"
+                  class="w-full h-auto object-contain scale-125"
+                />
+              </div>
+              <div class="w-full max-w-[100px] flex items-center justify-center">
+                <img
+                  src={icLogoWhite.src}
+                  alt="ic-logo"
+                  class="w-full h-auto object-contain"
+                />
+              </div>
+              <div class="w-full max-w-[120px] flex items-center justify-center">
+                <img
+                  src={standardCharteredLogo.src}
+                  alt="standard-chartered-logo"
+                  class="w-full h-auto object-contain"
+                />
+              </div>
             </div>
           </div>
         </Container>
