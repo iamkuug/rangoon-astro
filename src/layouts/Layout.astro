@@ -9,9 +9,19 @@ import "../styles/global.css";
 
 interface Props {
 	title?: string;
+	description?: string;
+	image?: string;
+	canonicalURL?: string;
 }
 
-const { title = "Rangoon REIT" } = Astro.props;
+const {
+	title = "Rangoon REIT",
+	description = "Rangoon Real Estate Investment Trust (REIT) is a premier real estate investment trust focused on high-quality commercial properties in Accra's most sought-after locations.",
+	image = "/og-image.jpg",
+	canonicalURL = new URL(Astro.url.pathname, Astro.site),
+} = Astro.props;
+
+const metaTitle = title ? `${title} | Rangoon REIT` : "Rangoon REIT";
 ---
 
 <!doctype html>
@@ -22,7 +32,37 @@ const { title = "Rangoon REIT" } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        
+        <!-- Primary Meta Tags -->
+        <title>{metaTitle}</title>
+        <meta name="title" content={metaTitle} />
+        <meta name="description" content={description} />
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={metaTitle} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={image} />
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Preload Critical Assets -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        
+        <!-- Additional Meta Tags -->
+        <meta name="theme-color" content="#1E3A8A" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Rangoon REIT" />
         <!-- <Lightbox /> -->
     </head>
     <body class="font-display ">

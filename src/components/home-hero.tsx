@@ -15,7 +15,7 @@ export const HomeHero = () => {
 	return (
 		<section
 			ref={containerRef}
-			className=" h-[250px]  md:h-[650px] w-full"
+			className="h-[250px] md:h-[650px] w-full bg-brand-primary"
 		>
 			<motion.div className="relative text-white flex items-center justify-center text-center py-20 h-full">
 				<motion.h1
@@ -29,8 +29,15 @@ export const HomeHero = () => {
 				</motion.h1>
 			</motion.div>
 
-			<motion.div className="top-0 absolute w-full -z-10 " style={{ y }}>
-				<img src={heroBg.src} alt="hero-bg" className="w-full h-[300px] md:h-[750px] object-cover" />
+			<motion.div className="top-0 absolute w-full -z-10" style={{ y }}>
+				<img 
+					src={heroBg.src} 
+					alt="Scenic view of Accra's prime real estate location" 
+					className="w-full h-[300px] md:h-[750px] object-cover"
+					loading="eager"
+					fetchPriority="high"
+					decoding="async"
+				/>
 			</motion.div>
 		</section>
 	);
