@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.7",
+    "@astrojs/sitemap": "^3.4.1",
     "@astrojs/vercel": "^8.1.4",
     "@fontsource-variable/dosis": "^5.2.5",
     "@julian_cataldo/astro-lightbox": "^0.10.11",
