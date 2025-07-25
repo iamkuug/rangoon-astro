@@ -24,7 +24,7 @@ export const properties = [
 	},
 	{
 		image: huaweiTower.src,
-		name: "Huawei Building ",
+		name: "Huawei Building",
 		location: "Rangoon Lane, Cantoments",
 		status: "Completed",
 		info: "An ultra modern 6-storey office building completed in March 16",
