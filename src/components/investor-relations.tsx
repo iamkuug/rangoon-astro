@@ -9,6 +9,13 @@ import { Newspaper } from "lucide-react";
 import { FileCheck } from "lucide-react";
 import { InvestorRelationsCard } from "./investor-relations-card";
 
+import filterBg1 from "../assets/filter-bg/filter-bg-1.png"
+import filterBg2 from "../assets/filter-bg/filter-bg-2.png"
+import filterBg3 from "../assets/filter-bg/filter-bg-3.png"
+import filterBg4 from "../assets/filter-bg/filter-bg-4.png"
+import filterBg5 from "../assets/filter-bg/filter-bg-5.png"
+import filterBg6 from "../assets/filter-bg/filter-bg-6.png"
+
 import investorRelationsBg from "../assets/investor-relations-bg.png";
 import investorRelationsIllustration from "../assets/investor-relations-illustration.png";
 import swoosh from "../assets/swoosh.png";
@@ -18,54 +25,54 @@ export const InvestorRelations = () => {
 		{
 			title: "Annual Reports & Disclosures",
 			link: "/investor-relations/investment-inquiry",
-			icon: <FileText strokeWidth={1.3} size={24} />,
+			icon: <FileText strokeWidth={1.6} size={32} />,
 			backgroundImage:
-				"https://goldkeyghana.com/wp-content/uploads/2025/02/IMG_1174-scaled-1.jpg",
+			filterBg1
 		},
 		{
 			title: "Financial Statements",
 			link: "/investor-relations/leasing",
-			icon: <FileChartLine strokeWidth={1.3} size={24} />,
+			icon: <FileChartLine strokeWidth={1.6} size={32} />,
 			backgroundImage:
-				"https://citinewsroom.com/wp-content/uploads/2021/05/Cannon-House-Ernst-Young-750x375.jpeg",
+			filterBg2
 		},
 		{
 			title: "FAQs",
 			link: "/investor-relations/other-inquiries",
-			icon: <MessageCircleQuestion strokeWidth={1.3} size={24} />,
+			icon: <MessageCircleQuestion strokeWidth={1.6} size={32} />,
 			backgroundImage:
-				"https://marcopolis.net/wp-content/uploads/Ghana_Report/2020/company_profiles/goldkey_properties/PwC_Tower.jpg",
+			filterBg3
 		},
 		{
 			title: "Prospectus",
 			link: "/investor-relations/other-inquiries",
-			icon: <FileSpreadsheet strokeWidth={1.3} className="-scale-x-[1]" size={24} />,
+			icon: <FileSpreadsheet strokeWidth={1.6} className="-scale-x-[1]" size={32} />,
 			backgroundImage:
-				"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbOhsJgEeIVDNGgWwx-4FYmLmIX7CBIEnWend_uiymXgooz2w9SZGNBiHpC4b_hiFXM8&usqp=CAU",
+			filterBg4
 		},
 		{
 			title: "News & Market Insights",
 			link: "/investor-relations/other-inquiries",
-			icon: <Newspaper size={24} strokeWidth={1.3} />,
+			icon: <Newspaper size={32} strokeWidth={1.6} />,
 			backgroundImage:
-				"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTwK7Ig-2Wm29FE_FeQhelFHOvItRnyUzlM6gc3D2oRtHBHLgzx8UFCkyqm3AG3SMRtr4&usqp=CAU",
+			filterBg5
 		},
 		{
 			title: "Factsheets",
 			link: "/investor-relations/other-inquiries",
-			icon: <FileCheck size={24} strokeWidth={1.3} />,
+			icon: <FileCheck size={32} strokeWidth={1.6} />,
 			backgroundImage:
-				"https://meqasa.com/uploads/imgs/ecec878867b32953568176d107a630a6",
+			filterBg6
 		},
 	];
 
 	return (
 		<div className="">
-			<section className="relative bg-brand-primary flex items-center justify-center py-24 px-5 overflow-hidden">
-				<img src={swoosh.src} alt="swoosh-bg" className="absolute w-[2500px]" />
+			<section className="relative flex items-center justify-center py-10 font-sans px-5 overflow-hidden">
+				{/* <img src={swoosh.src} alt="swoosh-bg" className="absolute w-[2500px]" /> */}
 				<div className="flex flex-col items-start w-4/5 mx-auto gap-y-12 z-10">
 					<div className="w-full">
-						<h1 className="text-4xl text-white font-semibold">
+						<h1 className="text-3xl">
 							Investor Relations
 						</h1>
 					</div>
@@ -76,7 +83,7 @@ export const InvestorRelations = () => {
 								icon={icon}
 								text={title}
 								key={i}
-								backgroundImage={backgroundImage}
+								backgroundImage={backgroundImage.src}
 							/>
 						))}
 					</div>
@@ -107,7 +114,7 @@ export const InvestorRelations = () => {
 					alt="canon-tower-gray"
 				/>
 				<div className="w-4/5 mx-auto flex flex-col items-center md:items-start text-center md:text-left gap-4">
-					<h1 className="text-3xl md:text-5xl text-brand-primary font-semibold">
+					<h1 className="text-3xl md:text-5xl  font-semibold">
 						Ready to Invest?
 					</h1>
 					<a

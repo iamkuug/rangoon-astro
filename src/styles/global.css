@@ -4,9 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-display: "Dosis Variable", "sans-serif";
+  --font-display:  "Dosis Variable", "sans-serif";
+  --font-sans: "Inter Variable", "sans-serif";
 
-  --color-brand-primary: #163e80;
+  --color-brand-primary: #b7914d;
   --color-brand-secondary: #4ac1e0;
   --color-brand-accent: #e87200;
 }

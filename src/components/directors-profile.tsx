@@ -43,11 +43,9 @@ export const DirectorsProfile = () => {
 	];
 
 	return (
-		<div className="min-h-screen bg-white md:get-in-touch-page" style={{
-			backgroundImage: `url(${bg.src})`,
-		}}>
+		<div className="min-h-screen bg-white md:get-in-touch-page" >
 			<section className="w-[90%] md:w-4/5 mx-auto pt-8 md:pt-10">
-				<h1 className="text-3xl md:text-4xl font-semibold text-brand-primary mb-8">
+				<h1 className="text-3xl md:text-4xl mb-18 font-sans">
 					Directors
 				</h1>
 			</section>
