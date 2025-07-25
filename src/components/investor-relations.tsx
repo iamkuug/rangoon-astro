@@ -24,42 +24,42 @@ export const InvestorRelations = () => {
 	const investorActions = [
 		{
 			title: "Annual Reports & Disclosures",
-			link: "/investor-relations/investment-inquiry",
+			link: "/investor-relations/annual-reports",
 			icon: <FileText strokeWidth={1.6} size={32} />,
 			backgroundImage:
 			filterBg1
 		},
 		{
 			title: "Financial Statements",
-			link: "/investor-relations/leasing",
+			link: "/investor-relations/financial-statements",
 			icon: <FileChartLine strokeWidth={1.6} size={32} />,
 			backgroundImage:
 			filterBg2
 		},
 		{
 			title: "FAQs",
-			link: "/investor-relations/other-inquiries",
+			link: "/investor-relations/frequently-asked-questions",
 			icon: <MessageCircleQuestion strokeWidth={1.6} size={32} />,
 			backgroundImage:
 			filterBg3
 		},
 		{
 			title: "Prospectus",
-			link: "/investor-relations/other-inquiries",
+			link: "/investor-relations/prospectus",
 			icon: <FileSpreadsheet strokeWidth={1.6} className="-scale-x-[1]" size={32} />,
 			backgroundImage:
 			filterBg4
 		},
 		{
 			title: "News & Market Insights",
-			link: "/investor-relations/other-inquiries",
+			link: "/investor-relations/news-and-market-insights",
 			icon: <Newspaper size={32} strokeWidth={1.6} />,
 			backgroundImage:
 			filterBg5
 		},
 		{
 			title: "Factsheets",
-			link: "/investor-relations/other-inquiries",
+			link: "/investor-relations/factsheets",
 			icon: <FileCheck size={32} strokeWidth={1.6} />,
 			backgroundImage:
 			filterBg6
@@ -70,7 +70,7 @@ export const InvestorRelations = () => {
 		<div className="">
 			<section className="relative flex items-center justify-center py-10 font-sans px-5 overflow-hidden">
 				{/* <img src={swoosh.src} alt="swoosh-bg" className="absolute w-[2500px]" /> */}
-				<div className="flex flex-col items-start w-4/5 mx-auto gap-y-12 z-10">
+				<div className="flex flex-col items-start w-4/5 mx-auto gap-y-12 z-10 pb-10">
 					<div className="w-full">
 						<h1 className="text-3xl">
 							Investor Relations
@@ -83,6 +83,7 @@ export const InvestorRelations = () => {
 								icon={icon}
 								text={title}
 								key={i}
+								link={link}
 								backgroundImage={backgroundImage.src}
 							/>
 						))}
@@ -102,7 +103,7 @@ export const InvestorRelations = () => {
 					</div>
 				</div>
 			</section>
-			<section className="relative flex items-center justify-center py-10 px-5 h-[250px] md:h-[400px] overflow-hidden">
+			<section className="relative flex items-center justify-center py-10 px-5 h-[250px] md:h-[350px] overflow-hidden">
 				<img
 					className="absolute inset-0 w-full h-full object-cover -z-10"
 					src={investorRelationsBg.src}

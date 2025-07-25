@@ -74,10 +74,9 @@ export const Navbar: FC<NavbarProps> = ({ className = "" }) => {
                       </NavigationMenuTrigger>
                       <span
                         className={`block mt-1 h-0.5 rounded bg-brand-primary transition-all duration-300
-                          ${
-                            (isActive(path) || isActive("/about-us/directors"))
-                              ? "w-2/5 opacity-100"
-                              : "w-0 group-hover:w-2/5 opacity-80"
+                          ${(isActive(path) || isActive("/about-us/directors"))
+                            ? "w-2/5 opacity-100"
+                            : "w-0 group-hover:w-2/5 opacity-80"
                           }
                         `}
                       />

@@ -33,14 +33,18 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
                 <div className="text-xl w-full">
                     {property?.info}
                 </div>
-                <p className="text-[30px] text-brand-primary ">
-                    {property?.occupancy}
-                </p>
-                <p className="text-[30px] text-brand-primary">
-                    {property?.size}
-                </p>
+                <div className="flex flex-row gap-4 mt-2">
+                    <div className="flex flex-col items-start">
+                        <span className="text-xs font-semibold bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full mb-1 tracking-wide">Occupancy</span>
+                        <span className="text-2xl md:text-4xl text-brand-primary">{property?.occupancy}</span>
+                    </div>
+                    <div className="flex flex-col items-start">
+                        <span className="text-xs font-semibold bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full mb-1 tracking-wide">Size</span>
+                        <span className="text-2xl md:text-4xl text-brand-primary">{property?.size}</span>
+                    </div>
+                </div>
                 <div>
-                    <img src={property?.tenants} alt={`${property?.name}-tower-tenants`} />
+                    <img className={`${property?.name === "Huawei Building" ? "w-24" : ""}`} src={property?.tenants} alt={`${property?.name}-tower-tenants`} />
                 </div>
             </div>
         </div>

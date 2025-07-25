@@ -5,6 +5,7 @@ import cantomentsCityLogo from "../assets/cantoments-city-logo.png";
 import heroBg from "../assets/hero-bg.png";
 import heroText from '../assets/hero-text.png'
 import icLogo from "../assets/ic-logo.png"
+import { RevealSection } from "./reveal-section";
 
 export const HomeHero = () => {
   const containerRef = useRef<HTMLElement>(null);
@@ -23,22 +24,26 @@ export const HomeHero = () => {
         src={heroBg.src}
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         alt="hero background"
+        loading="eager"
+        fetchPriority="high"
       />
       {/* Navbar and Hero content overlays background */}
       <div className="relative z-10">
         <Navbar />
-        <section
-          ref={containerRef}
-          className="relative flex flex-col items-center justify-center h-[250px] md:h-[650px] w-full"
-        >
-          <div className="text-brand-primary flex flex-col items-center justify-center text-center py-20 h-full -mt-24">
-            <div className="w-44">
-              <img src={cantomentsCityLogo.src} />
+        <RevealSection>
+          <section
+            ref={containerRef}
+            className="relative flex flex-col items-center justify-center h-[250px] md:h-[650px] w-full"
+          >
+            <div className="text-brand-primary flex flex-col items-center justify-center text-center py-20 h-full -mt-24">
+              <div className="w-44">
+                <img src={cantomentsCityLogo.src} />
+              </div>
+              <img src={heroText.src} className="w-1/3" />
             </div>
-			    <img src={heroText.src} className="w-1/3"/>
-          </div>
-		      <img className="absolute right-10 bottom-10 w-18" src={icLogo.src}/>
-        </section>
+            <img className="absolute right-10 bottom-10 w-18" src={icLogo.src} />
+          </section>
+        </RevealSection>
       </div>
     </div>
   );
