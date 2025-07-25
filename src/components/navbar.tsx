@@ -52,7 +52,7 @@ export const Navbar: FC<NavbarProps> = ({ className = "" }) => {
         <button
           type="button"
           onClick={toggleMenu}
-          className="md:hidden text-white p-2"
+          className="md:hidden text-black p-2"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <AlignRight size={24} />}
