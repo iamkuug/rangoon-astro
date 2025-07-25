@@ -2,6 +2,8 @@ import infTower from "../assets/infinity-towers/inf-1.png"
 import huaweiTower from "../assets/huawei/h-1.png"
 import eyTower from "../assets/ey/ey-1.png"
 import infLogoGroup from "../assets/logo-groups/infinity-tower-logo-group.png"
+import eyLogoGroup from "../assets/logo-groups/ey-tower-logo-group.png"
+import huaweiLogoGroup from "../assets/logo-groups/huawei-logo-group.png"
 
 export const properties = [
 	{
@@ -28,7 +30,7 @@ export const properties = [
 		info: "An ultra modern 6-storey office building completed in March 16",
 		occupancy: "100%",
 		size: "6,5000 sqm",
-		tenants: [],
+		tenants: huaweiLogoGroup.src,
 		stock_images: [
 			"https://goldkeyghana.com/wp-content/uploads/2025/02/IMG_1174-scaled-1-2048x1536.jpg",
 			"https://goldkeyghana.com/wp-content/uploads/2025/02/int-10.jpg",
@@ -43,7 +45,7 @@ export const properties = [
 		info: "An iconic ten(10)-storey, sustainable Grade A office building with retail space. Completed in April 2021",
 		occupancy: "83%",
 		size: "13,500 sqm",
-		tenants: ["Private Residents"],
+		tenants: eyLogoGroup.src,
 		stock_images: [
 			"https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-20-scaled-1-2048x1366.jpg",
 			"https://goldkeyghana.com/wp-content/uploads/2025/02/High-Spec-Fit-out-1-scaled-1-2048x1366.jpg",
