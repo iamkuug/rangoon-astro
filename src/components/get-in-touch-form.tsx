@@ -71,11 +71,11 @@ export const GetInTouchForm = () => {
 
 	return (
 		<div className="relative min-h-[600px] md:min-h-[900px] overflow-hidden">
-			<img
+			{/* <img
 				src={getInTouchBg.src}
 				alt="get-in-touch-bg"
 				className="absolute inset-0 w-full h-full object-cover -z-10"
-			/>
+			/> */}
 			<section className="flex items-center justify-center pt-6 md:pt-10 px-5">
 				<div className="w-full md:w-4/5 mx-auto flex flex-col items-start gap-4">
 					<h1 className="text-3xl md:text-4xl font-semibold text-brand-primary">

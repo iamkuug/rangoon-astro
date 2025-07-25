@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "./container";
-import rangoonLogoBlue from "../assets/rangoon-logo-blue.png";
+import rangoonLogoBlue from "../assets/rangoon-logo-gold.png";
 
 export const Footer = () => {
 	return (

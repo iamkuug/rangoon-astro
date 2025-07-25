@@ -1,5 +1,7 @@
 ---
 import "@fontsource-variable/dosis";
+import "@fontsource-variable/inter"
+
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
 import { Toaster } from "sonner";
@@ -9,9 +11,10 @@ import "../styles/global.css";
 
 interface Props {
 	title?: string;
+    showNavbar?: boolean
 }
 
-const { title = "Rangoon REIT" } = Astro.props;
+const { title = "Rangoon REIT", showNavbar=true } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,8 +28,8 @@ const { title = "Rangoon REIT" } = Astro.props;
         <title>{title}</title>
         <!-- <Lightbox /> -->
     </head>
-    <body class="font-display ">
-        <Navbar client:only />
+    <body class="font-display">
+        {showNavbar && <Navbar client:only /> }
         <main>
             <slot />
         </main>

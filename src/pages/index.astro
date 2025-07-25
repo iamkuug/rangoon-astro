@@ -3,6 +3,7 @@ import { Container } from "../components/container";
 import { HomeHero } from "../components/home-hero";
 import Separator from "../components/separator";
 import Layout from "../layouts/Layout.astro";
+
 import "../styles/global.css";
 
 import rangoonLogoWhite from "../assets/rangoon-logo-white.png";
@@ -14,18 +15,24 @@ import infinity2 from "../assets/infinity-towers/inf-2.png";
 import goldkeyLogo from "../assets/goldkey-logo.png";
 import icLogoWhite from "../assets/ic-logo-white.png";
 import standardCharteredLogo from "../assets/standard-chartered-logo.png";
+import filterBg1 from "../assets/filter-bg/filter-bg-1.png"
 import { Image } from "astro:assets";
 ---
 
-<Layout title='Home | Rangoon REIT'>
-      <HomeHero client:load/>
-      <section class="bg-brand-primary flex items-center justify-center py-8 md:py-10 px-4 md:px-5">
+<Layout title='Home | Rangoon REIT' showNavbar={false}>
+      <HomeHero client:only="react" />
+      <section class="relative flex items-center justify-center py-8 md:py-10 px-4 md:px-5">
+        <img
+          class="absolute inset-0 w-full h-full object-cover -z-10"
+          src={filterBg1.src}
+          alt="canon-tower-gray"
+        />
         <div class="flex flex-col md:flex-row items-center justify-center w-full md:w-4/5 mx-auto gap-y-6 md:gap-x-20 min-h-[250px]">
-          <div class="w-[200px] md:w-[400px]">
+          <div class="w-[200px] md:w-[350px]">
             <img src={rangoonLogoWhite.src} alt="Rangoon-Logo" class="w-full" />
           </div>
           <div class="flex flex-col items-start w-full md:w-1/2 gap-y-4 text-center md:text-left">
-            <div class="h-1.5 w-1/3 bg-brand-secondary mx-auto md:mx-0" />
+            <div class="h-1.5 w-1/3 bg-white mx-auto md:mx-0" />
             <p class="text-white text-sm w-full md:w-5/6">
               Rangoon Real Estate Invest Trust (REIT) is a real estate
               investment trust established to invest directly and indirectly in
@@ -36,14 +43,14 @@ import { Image } from "astro:assets";
             </p>
             <a
               href="/about-us"
-              class="font-semibold bg-brand-secondary text-brand-primary rounded-full px-4 py-1 mx-auto md:mx-0 hover:ring-1 hover:ring-white hover:ring-offset-1 active:bg-brand-secondary/80"
+              class="font-semibold bg-white text-brand-primary rounded-sm px-4 py-1 mx-auto md:mx-0 hover:ring-1 hover:ring-white hover:ring-offset-1 active:bg-brand-secondary/80"
             >
               <span>Learn More</span>
             </a>
           </div>
         </div>
       </section>
-      <section class="relative py-12 md:py-24 px-4 md:px-5 flex flex-col items-center justify-center gap-y-8 bg-white overflow-hidden">
+      <!-- <section class="relative py-12 md:py-24 px-4 md:px-5 flex flex-col items-center justify-center gap-y-8 bg-white overflow-hidden">
         <img
           class="absolute inset-0 w-full h-full object-cover opacity-10 md:opacity-30"
           src={canonTowerGray.src}
@@ -115,8 +122,8 @@ import { Image } from "astro:assets";
             </div>
           </div>
         </div>
-      </section>
-      <section class="bg-brand-primary text-white py-12 md:py-16 px-4 md:px-5">
+      </section> -->
+      <!-- <section class="bg-brand-primary text-white py-12 md:py-16 px-4 md:px-5">
         <Container className="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
             <h2 class="text-3xl md:text-4xl font-semibold text-center md:text-left">
@@ -148,5 +155,5 @@ import { Image } from "astro:assets";
             </div>
           </div>
         </Container>
-      </section>   
+      </section>    -->
 </Layout>

@@ -26,8 +26,8 @@ const navItems: NavItem[] = [
   { path: "/", label: "HOME" },
   { path: "/about-us", label: "ABOUT US" },
   { path: "/investor-relations", label: "INVESTOR RELATIONS" },
-  { path: "/get-in-touch", label: "GET IN TOUCH" },
   { path: "/property-portfolio", label: "PROPERTY PORTFOLIO" },
+  { path: "/get-in-touch", label: "GET IN TOUCH" },
 ];
 
 export const Navbar: FC<NavbarProps> = ({ className = "" }) => {
@@ -39,7 +39,7 @@ export const Navbar: FC<NavbarProps> = ({ className = "" }) => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className={`flex items-center justify-between -my-1  ${className}`}>
+    <nav className={`flex items-center justify-between -my-1 bg-transparent  ${className}`}>
       <Container className="flex items-center justify-between">
         <a href="/">
           <img

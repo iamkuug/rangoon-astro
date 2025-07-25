@@ -18,12 +18,12 @@ export const InvestorRelationsCard: React.FC<InvestorRelationsCardProps> = ({
 	return (
 		<div
 			className={`group relative w-full ${
-				isMobile ? "h-32" : "h-64"
+				isMobile ? "h-32" : "h-52"
 			} rounded-2xl md:rounded-3xl overflow-hidden flex items-center justify-center cursor-pointer ${
-				isMobile ? "px-4 py-3" : "px-10 py-5"
+				isMobile ? "px-4 py-3" : "px-8 py-5"
 			} ${backgroundImage ? "" : bgColor}`}
 		>
-			<div className="absolute inset-0 bg-brand-secondary opacity-50 z-10" />
+			<div className="absolute inset-0 z-10" />
 			<img
 				src={backgroundImage}
 				className="group-hover:scale-110 transition-all ease-in-out absolute w-full h-full object-cover"
@@ -44,8 +44,8 @@ export const InvestorRelationsCard: React.FC<InvestorRelationsCardProps> = ({
 				)}
 				{text && (
 					<p
-						className={`font-semibold absolute bottom-0 left-0 leading-tight ${
-							isMobile ? "text-sm w-24" : "text-xl w-32"
+						className={`absolute bottom-0 left-0 leading-tight ${
+							isMobile ? "text-sm w-24" : "text-lg w-52"
 						}`}
 					>
 						{text}
